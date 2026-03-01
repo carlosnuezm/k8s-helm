@@ -1,0 +1,9 @@
+namespace: myapi
+name: api
+replicas: 1
+image:
+  repository: carlangasds/api
+  tag: 1
+service:
+  targetPort: 8000
+  port: 8000
