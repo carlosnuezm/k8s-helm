@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapi
-  namespace: argocd
+  name: newapi
+  namespace: pipelines
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -13,7 +13,7 @@ spec:
     path: k8s/api/myapi
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapi
+    namespace: newapi
   syncPolicy:
     automated:
       prune: true

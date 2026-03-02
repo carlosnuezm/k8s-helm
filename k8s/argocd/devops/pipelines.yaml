@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapi
+  name: pipelines
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
-  project: devops-tools
+  project: default
   source:
     repoURL: https://github.com/carlosnuezm/k8s-helm.git
     targetRevision: main
-    path: k8s/api/myapi
+    path: k8s/argocd/pipelines
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapi
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
