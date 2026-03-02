@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/carlosnuezm/k8s-helm.git
     targetRevision: main
-    path: k8s/api/myapi
+    path: k8s/api/newapi
   destination:
     server: https://kubernetes.default.svc
     namespace: newapi
