@@ -6,7 +6,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app.kubernetes.io/name: {{ .Values.name }}
+    app.kubernetes.io/name: {{ .Values.name }}-deployment
   ports:
     - protocol: TCP
       port: {{ .Values.service.port }}
