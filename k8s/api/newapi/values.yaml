@@ -3,7 +3,7 @@ name: newapi
 replicas: 1
 image:
   repository: carlangasds/api
-  tag: 1
+  tag: 2
 service:
   targetPort: 8000
   port: 8008
