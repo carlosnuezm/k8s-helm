@@ -1,0 +1,9 @@
+namespace: apiv2
+name: apiv2
+replicas: 1
+image:
+  repository: carlangasds/api
+  tag: 1
+service:
+  targetPort: 8000
+  port: 8080

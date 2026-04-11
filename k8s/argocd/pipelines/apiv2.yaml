@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apiv2
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: devops-tools
+  source:
+    repoURL: https://github.com/carlosnuezm/k8s-helm.git
+    targetRevision: main
+    path: k8s/api/newapi
+    helm:
+      valueFiles:
+      - apiv2.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apiv2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
