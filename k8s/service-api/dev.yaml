@@ -1,0 +1,9 @@
+namespace: dev
+name: dev
+replicas: 1
+image:
+  repository: carlangasds/api
+  tag: 1
+service:
+  targetPort: 8899
+  port: 8080

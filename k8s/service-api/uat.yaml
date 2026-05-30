@@ -1,0 +1,9 @@
+namespace: uat
+name: uat
+replicas: 1
+image:
+  repository: carlangasds/api
+  tag: 1
+service:
+  targetPort: 8866
+  port: 8080
